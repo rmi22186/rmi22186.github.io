@@ -1,0 +1,10 @@
+{
+  "name": "identity-js-testapp",
+  "version": "0.0.1",
+  "description": "mParticle JS Identity App",
+  "repository": "https://github.com/mParticle/mparticle-sdk-javascript",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
