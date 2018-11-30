@@ -6,13 +6,11 @@ var apiRequest;
 var apiRequestCopy;
 
 var callback = function(resp) {
-    console.log('resp');
-    console.log('resp');
-    console.log('resp');
+    console.log('callback resp');
     console.log(resp);
 };
 
-mParticle.config.identityCallback = callback;
+// mParticle.config.identityCallback = callback;
 $('.build').click(function() {
     var email = $('#email').val();
     var customerId = $('#customerId').val();

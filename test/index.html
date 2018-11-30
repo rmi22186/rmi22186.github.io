@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <title>Identity Test App</title>
+      <link rel="manifest" href="../manifest.json" />
+      <link rel="stylesheet" href="../styles.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+
+      <script>
+          // window.DY = window.DY || {}; DY.recommendationContext = {type: 'Product', data: ['SKU123']}
+      </script>
+      <!-- <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_dynamic.js"></script> -->
+      <!-- <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_static.js"></script> -->
+    </head>
+    <body>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <h4>
+                        For Identity JS SDK (v2) only
+                    </h4>
+                    <div class="input-field col s6">
+                        <input placeholder="Email" id="email" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="CustomerId" id="customerId" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Other User Identity Type" id="userIdentityType" type="text">
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Other User Identity Value" id="userIdentityValue" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="User Attribute Key" id="userAttributeKey" type="text">
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="User Attribute Key" id="userAttributeValue" type="text">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="textarea col s4">
+                onUserAlias Function
+                <textarea id="function" type="text"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col s12">
+                <a class="waves-effect blue-light btn build">Build User</a>
+                <a class="waves-effect blue-light btn setUserAttribute">Set User Attribute</a>
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="col s12">
+                <a class="waves-effect waves-light btn logout">logout</a>
+                <a class="waves-effect waves-light btn login">login</a>
+                <a class="waves-effect waves-light btn modify">modify</a>
+            </form>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="input-field col s4">
+                <input placeholder="Product Name" id="productName" type="text">
+            </div>
+            <div class="input-field col s4">
+                <input placeholder="Product SKU" id="productSKU" type="text">
+            </div>
+            <div class="input-field col s4">
+                <input placeholder="Product Price" id="productPrice" type="text">
+            </div>
+        </div>
+
+        <div class="row">
+            <form class="col s12">
+                <a class="waves-effect blue btn addProductToCart">Add Product To Current User Cart</a>
+            </form>
+        </div>
+        <hr>
+        <div class="row">
+            <form class="col s12">
+                <a class="waves-effect red btn logEvent">Log Event</a>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="result">
+            <h5>CurrentSessionMPIDs:</h5>
+            <div class="currentSessionMPIDs">
+            </div>
+
+            <h5>CurrentUserMPID:</h5>
+            <div class="currentUserMPID">
+            </div>
+
+            <h5>API Request Data:</h5>
+            <pre class="apiRequestData">
+            </pre>
+            <h5>Products:</h5>
+            <pre class="cartProducts">
+            </pre>
+            <h5>Cookies</h5>
+            <pre class="cookies">
+            </pre>
+        </div>
+
+        <hr>
+
+        <div class="result">
+
+        </div>
+    </body>
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript">
+      window.mParticle = {
+          // isIOS: true,
+          // useNativeSdk: true
+      };
+      </script>
+      <script type="text/javascript">
+            (function (apiKey) {
+                window.mParticle = window.mParticle || {};
+                window.mParticle.eCommerce = { Cart: {} };
+                window.mParticle.Identity = {};
+                window.mParticle.config = window.mParticle.config || {
+                    useCookieStorage: false,
+                    isDevelopmentMode: true,
+                    detailedLogging: true,
+                    identifyRequest: {
+                        userIdentities: {
+                            email: 'email@example.com'
+                        }
+                    },
+                    identityCallback: function(a, b) {
+                        console.log(a);
+                        console.log(b);
+                    }
+                    // customFlags: {CRITEO_SITETYPE: 'm'}
+                };
+                window.mParticle.config.rq = [];
+                window.mParticle.ready = function (f) {
+                    window.mParticle.config.rq.push(f);
+                };
+
+                function a(o,t){return function(){t&&(o=t+"."+o);var e=Array.prototype.slice.call(arguments);e.unshift(o),window.mParticle.config.rq.push(e)}}var x=["endSession","logError","logEvent","logForm","logLink","logPageView","setSessionAttribute","setAppName","setAppVersion","setOptOut","setPosition","startNewSession","startTrackingLocation","stopTrackingLocation"],y=["setCurrencyCode","logCheckout"],z=["login","logout","modify"];x.forEach(function(o){window.mParticle[o]=a(o)}),y.forEach(function(o){window.mParticle.eCommerce[o]=a(o,"eCommerce")}),z.forEach(function(o){window.mParticle.Identity[o]=a(o,"Identity")});
+
+                var mp = document.createElement('script');
+                mp.type = 'text/javascript';
+                mp.async = false;
+                // mp.src = 'http://jssdkcdn.mparticle.com/js/v1/' + apiKey + '/mparticle.js' // v1
+                // mp.src = 'http://jssdkcdn.mparticle.com/js/v2/' + apiKey + '/mparticle.js' // v2
+                // mp.src = './mparticle-sdk-javascript-private/mparticle.js' // for devs v1
+                mp.src = '../mparticle-sdk-javascript-private/build/mParticle-dev.js' // for devs v2
+                // mp.src = 'http://jssdk-origin-qa1.mparticle.com/js/v1/' + apiKey + '/mparticle.js' // for qa v1
+                var d = document.getElementsByTagName('script')[0];
+                d.parentNode.insertBefore(mp, d);
+            // })('b1fa5dc0ec85b54da8024a6c13ae5db3');
+            // })('beab3f4d34281d45bfcdbbd7eb21c083');
+                // **********For Development Purposes only - Uncommenting may cause unintended behavior in test app**********
+                var forwarderScripts = document.createElement('script');
+                forwarderScripts.type = 'text/javascript';
+                forwarderScripts.async = false;
+                forwarderScripts.src = ('../forwarderSetup.js');
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(forwarderScripts, s);
+    })(); // your api key here
+    // })('beab3f4d34281d45bfcdbbd7eb21c083'); // your api key here
+   //  </script>
+   <script type="text/javascript" src="../scripts.js"></script>
+</html>
