@@ -18,7 +18,7 @@
 
       <!-- DynamicYield -->
       <script>
-      console.log('updated')
+      console.log('ready!')
 //           window.DY = window.DY || {}; DY.recommendationContext = {type: 'Product', data: ['SKU123']}
       </script>
       <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_dynamic.js"></script>
@@ -63,6 +63,7 @@
                      window.mParticle.config.sessionTimeout = 500;
                      window.mParticle.config.rq = [];
                      window.mParticle.ready = function (f) {
+                         debugger
                          window.mParticle.config.rq.push(f);
                      };
                      window.mParticle.config.identityCallback = function(a, b) {
