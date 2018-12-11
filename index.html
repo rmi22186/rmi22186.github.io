@@ -18,8 +18,8 @@
 
       <!-- DynamicYield -->
       <script>
-      console.log('embed')
-          window.DY = window.DY || {}; DY.recommendationContext = {type: 'Product', data: ['SKU123']}
+      console.log('updated')
+//           window.DY = window.DY || {}; DY.recommendationContext = {type: 'Product', data: ['SKU123']}
       </script>
       <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_dynamic.js"></script>
       <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_static.js"></script>
@@ -47,13 +47,12 @@
                           email: 'email@example.com',
                           customerid: '123456'
                       },
-                      onUserAlias: function(oldUser, newUser) {
-                          debugger;
-                          var oldUserAttributes = oldUser.getAllUserAttributes();
-                          for (var userAttrKey in oldUserAttributes){
-                              newUser.setUserAttibute(userAttrKey, oldUserAttributes[userAttrKey]);
-                          }
-                      }
+//                       onUserAlias: function(oldUser, newUser) {
+//                           var oldUserAttributes = oldUser.getAllUserAttributes();
+//                           for (var userAttrKey in oldUserAttributes){
+//                               newUser.setUserAttibute(userAttrKey, oldUserAttributes[userAttrKey]);
+//                           }
+//                       }
                   }
                      window.mParticle = window.mParticle || {};
                      window.mParticle.eCommerce = { Cart: {} };
@@ -90,14 +89,12 @@
                   var mp = document.createElement('script');
                   mp.type = 'text/javascript';
                   mp.async = developing === false;
+                  debugger;
                   if (developing) {
                       mp.src = './mparticle-sdk-javascript-private/build/mParticle-dev.js' // for devs v2
                   } else {
                       mp.src = 'https://jssdkcdn.mparticle.com/js/v2/' + apiKey + '/mparticle.js' // v2
                   }
-                  // mp.src = 'http://jssdkcdn.mparticle.com/js/v1/' + apiKey + '/mparticle.js' // v1
-                  // mp.src = './mparticle-sdk-javascript-private/mparticle.js' // for devs v1
-                  // mp.src = 'http://jssdk-origin-qa1.mparticle.com/js/v2/' + apiKey + '/mparticle.js' // for qa v1
                   var d = document.getElementsByTagName('script')[0];
                   d.parentNode.insertBefore(mp, d);
                   // mp.onload =function() {
