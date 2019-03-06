@@ -7,37 +7,11 @@
       <link rel="stylesheet" href="styles.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
-
-      <!-- OPTANON -->
-      <!-- <script src="https://optanon.blob.core.windows.net/consent/0222fe68-5687-4cf3-9c9e-2ef942ca7051-test.js" type="text/javascript" charset="UTF-8"></script> -->
-
-      <!-- OPTIMIZELY -->
-      <!-- <script src="https://cdn.optimizely.com/js/11368870075.js"></script> -->
-
-
-
-      <!-- DynamicYield -->
       <script>
-      console.log('ready!')
-//           window.DY = window.DY || {}; DY.recommendationContext = {type: 'Product', data: ['SKU123']}
+        console.log('origin!')
       </script>
-      <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_dynamic.js"></script>
-      <script type="text/javascript" src="//cdn.dynamicyield.com/api/8769977/api_static.js"></script>
-
-      <div id="dy_Untitled_Dynamic_Content"></div>
-        <script type="text/javascript">
-        	DYO.smartObject("Untitled Dynamic Content", {target: "dy_Untitled_Dynamic_Content", inline:true});
-        </script>
     </head>
     <body>
-
-        <!-- OneTrust Cookies Settings button start -->
-        <!-- <a class="optanon-show-settings">Cookie Settings</a> -->
-        <!-- OneTrust Cookies Settings button end -->
-        <!-- OneTrust Cookies List start -->
-        <!-- <div id="optanon-cookie-policy"></div> -->
-        <!-- OneTrust Cookies List end -->
-
         <script type="text/javascript">
         var developing = false;
         var apiKey = 'beab3f4d34281d45bfcdbbd7eb21c083';
@@ -47,23 +21,14 @@
                           email: 'email@example.com',
                           customerid: '123456'
                       },
-//                       onUserAlias: function(oldUser, newUser) {
-//                           var oldUserAttributes = oldUser.getAllUserAttributes();
-//                           for (var userAttrKey in oldUserAttributes){
-//                               newUser.setUserAttibute(userAttrKey, oldUserAttributes[userAttrKey]);
-//                           }
-//                       }
                   }
                      window.mParticle = window.mParticle || {};
                      window.mParticle.eCommerce = { Cart: {} };
                      window.mParticle.Identity = {};
                      window.mParticle.config = window.mParticle.config || {};
                      window.mParticle.config.isDevelopmentMode = true;
-                     window.mParticle.config.logLevel = 'verbose';
-                     window.mParticle.config.sessionTimeout = 500;
                      window.mParticle.config.rq = [];
                      window.mParticle.ready = function (f) {
-                         debugger
                          window.mParticle.config.rq.push(f);
                      };
                      window.mParticle.config.identityCallback = function(a, b) {
@@ -90,28 +55,24 @@
                   var mp = document.createElement('script');
                   mp.type = 'text/javascript';
                   mp.async = developing === false;
-                  debugger;
                   if (developing) {
                       mp.src = './mparticle-sdk-javascript-private/build/mParticle-dev.js' // for devs v2
                   } else {
-                      mp.src = 'https://jssdkcdn.mparticle.com/js/v2/' + apiKey + '/mparticle.js' // v2
+                      mp.src = 'https://jssdk-origin.mparticle.com/js/v2/' + apiKey + '/mparticle.js' // v2
                   }
                   var d = document.getElementsByTagName('script')[0];
                   d.parentNode.insertBefore(mp, d);
-                  // mp.onload =function() {
-                  //     debugger;
-                  // })
               })(apiKey);
               // })('beab3f4d34281d45bfcdbbd7eb21c083');
                   // **********For Development Purposes only - Uncommenting may cause unintended behavior in test app**********
-                  if (developing) {
-                      var forwarderScripts = document.createElement('script');
-                      forwarderScripts.type = 'text/javascript';
-                      forwarderScripts.async = false;
-                      forwarderScripts.src = ('forwarderSetup.js');
-                      var s = document.getElementsByTagName('script')[0];
-                      s.parentNode.insertBefore(forwarderScripts, s);
-                  }
+                  // if (developing) {
+                  //     var forwarderScripts = document.createElement('script');
+                  //     forwarderScripts.type = 'text/javascript';
+                  //     forwarderScripts.async = false;
+                  //     forwarderScripts.src = ('forwarderSetup.js');
+                  //     var s = document.getElementsByTagName('script')[0];
+                  //     s.parentNode.insertBefore(forwarderScripts, s);
+                  // }
       </script>
         <div class="row">
             <form class="col s12">
@@ -226,5 +187,5 @@
       <script type="text/javascript">
       </script>
 </script>
-   <script type="text/javascript" src="scripts.js"></script>
+   <!-- <script type="text/javascript" src="scripts.js"></script> -->
 </html>
