@@ -28,6 +28,12 @@
                      window.mParticle.config = window.mParticle.config || {};
                      window.mParticle.config.isDevelopmentMode = true;
                      window.mParticle.config.rq = [];
+                      window.mParticle.config.v2SecureServiceUrl = 'mp.quibi.com/webevents/v2/JS/';          // maps to: jssdks.mparticle.com/v2/JS/
+                window.mParticle.config.v3SecureServiceUrl = 'mp.quibi.com/webevents/v3/JS/';          // maps to: jssdks.mparticle.com/v3/JS/
+                window.mParticle.config.configUrl = 'mp.quibi.com/tags/JS/v2/';            // maps to: jssdkcdns.mparticle.com/JS/v2/
+                window.mParticle.config.identityUrl = 'mp.quibi.com/identity/v1/';           // maps to: identity.mparticle.com/v1/
+                window.mParticle.config.aliasUrl = 'mp.quibi.com/webevents/v1/identity/';     // maps to: jssdks.mparticle.com/v1/identity/
+                  
                      window.mParticle.ready = function (f) {
                          window.mParticle.config.rq.push(f);
                      };
