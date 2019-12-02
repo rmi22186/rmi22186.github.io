@@ -33,6 +33,7 @@
                 window.mParticle.config.configUrl = 'mp.quibi.com/tags/JS/v2/';            // maps to: jssdkcdns.mparticle.com/JS/v2/
                 window.mParticle.config.identityUrl = 'mp.quibi.com/identity/v1/';           // maps to: identity.mparticle.com/v1/
                 window.mParticle.config.aliasUrl = 'mp.quibi.com/webevents/v1/identity/';     // maps to: jssdks.mparticle.com/v1/identity/
+                  window.mParticle.config.useCookieStorage = true;
                   
                      window.mParticle.ready = function (f) {
                          window.mParticle.config.rq.push(f);
